@@ -1,0 +1,15 @@
+[{
+    "copse": {
+        "id": 0,
+        "fontName": "Copse",
+        "weights": [400],
+        "type": "serif",
+        "background": {
+            "type": "plain",
+            "colors": ["#334927"]
+        },
+        "foreground": {
+            "colors": ["#439945"]
+        }
+    }
+}]
