@@ -1,28 +1,143 @@
 // bower:scss
 // endbower
- body {
-    background: #e74c3c;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+//@import url(http://fonts.googleapis.com/css?family=Copse);
+
+
+$animation-init-percentage: -100%;
+$animation-normal-percentage: 0%;
+$animation-end-percentage: 100%;
+
+$animation-init-point: 0.7;
+$animation-normal-point: 1;
+$animation-end-point: 1.3;
+
+$animation-speed: .7s;
+$animation-easing: ease;
+
+
+@mixin zero-margin-padding {
+  margin: 0;
+  padding: 0;
 }
-.hero-unit {
-    margin: 130px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 30px;
-    background-color: #FFF;
-    padding: 60px;
-    box-shadow:0 0 75px rgba(0,0,0,0.5);
+
+html, body {
+  @include zero-margin-padding();
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #000;
+}
+
+.wf-active {
+  .view-wrap {
+    opacity: 1;
+  }
+}
+
+#app {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+
+}
+
+#app, .view-wrap {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.view-wrap {
+  background: #e74c3c;
+  opacity: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.show-next {
+    animation: nextInAnimation $animation-speed $animation-easing both;
+  }
+  &.show-prev {
+    animation: prevInAnimation $animation-speed $animation-easing both;
+  }
+  &.hide-next {
+    animation: nextOutAnimation $animation-speed $animation-easing both;
+  }
+  &.hide-prev {
+    animation: prevOutAnimation $animation-speed $animation-easing both;
+  }
+
+  .font-view {
+    justify-content: self;
+    font-family: Copse, serif;
+
     h1 {
-        font-size: 60px;
-        line-height: 1;
-        letter-spacing: -1px;
+      @include zero-margin-padding();
+      font-size: 5.5em;
+      font-weight: 200;
+      color: #FFF;
     }
+  }
 }
+
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+@keyframes nextOutAnimation {
+  from {
+    opacity: 1;
+    transform: translateX($animation-normal-percentage) scale($animation-normal-point);
+  }
+  to {
+    opacity: 0;
+    transform: translateX($animation-init-percentage) scale($animation-init-point);
+  }
+}
+
+@keyframes nextInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX($animation-end-percentage) scale($animation-end-point);
+  }
+  to {
+    opacity: 1;
+    transform: translateX($animation-normal-percentage) scale($animation-normal-point);
+  }
+}
+
+@keyframes prevOutAnimation {
+
+  from {
+    opacity: 1;
+    transform: translateX($animation-normal-percentage) scale($animation-normal-point);
+  }
+  to {
+    opacity: 0;
+    transform: translateX($animation-end-percentage) scale($animation-end-point);
+  }
+}
+
+@keyframes prevInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX($animation-init-percentage) scale($animation-init-point);
+  }
+  to {
+    opacity: 1;
+    transform: translateX($animation-normal-percentage) scale($animation-normal-point);
+  }
 }

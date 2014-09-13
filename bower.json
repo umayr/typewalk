@@ -2,6 +2,10 @@
   "name": "typefaces",
   "private": true,
   "dependencies": {
-    "jquery": "~1.11.1"
+    "jquery": "~1.11.1",
+    "superagent": "~0.18.2",
+    "underscore": "~1.7.0",
+    "q": "v1",
+    "bower-webfontloader": "~1.5.6"
   }
 }
