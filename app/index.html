@@ -2,13 +2,14 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>typefaces</title>
+        <title>TypeWalk - Google fonts with a little swag.</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.) styles/vendor.css -->
         <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
@@ -21,14 +22,65 @@
             Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div id="app">
-            <!--<div class="view-wrap" id="copse">
-                <div class="font-view">
-                    <h1>Copse</h1>
-                </div>
-            </div>-->
+        <div id="hello">
+            <img src="images/logo.png" alt=""/>
         </div>
 
+        <div id="app" class="hide">
+        </div>
+
+        <!--        <div id="view" class="white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-8">
+                                <h1>Droid Sans</h1>
+
+                                <h3>Lorem ipsum dolor sit amet.</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-4">
+                                <br/>
+
+                                <p>Consectetur adipiscing elit. Aenean facilisis suscipit mauris et
+                                    tincidunt. Nulla pretium ligula leo, sed posuere turpis suscipit eu. Sed rhoncus vestibulum
+                                    diam, blandit faucibus sem venenatis vitae. Pellentesque interdum, sem nec tristique
+                                    malesuada, orci dui consectetur mauris, nec pharetra quam dui non leo. Duis interdum lectus
+                                    sit amet odio auctor egestas. </p>
+                                <blockquote>
+                                    <p>Morbi congue <em>eros arcu</em> pretium. <span class="small">Bec Aliquet.</span></p>
+                                </blockquote>
+
+                                <p>Phasellus purus nunc, consectetur sed libero vitae, commodo accumsan sem. Vestibulum egestas,
+                                    mi non sodales hendrerit, libero purus semper nibh, at pretium arcu magna a magna. Etiam ut
+                                    purus sed purus ullamcorper imperdiet. Aenean pharetra eget dui nec fermentum. Curabitur
+                                    congue lorem justo, ut porttitor felis rhoncus sed. Phasellus a rhoncus libero. Nunc ut
+                                    tincidunt ipsum. In vehicula massa ut facilisis gravida.
+
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <br/>
+
+                                <p>Aliquam erat volutpat. Integer vel est consequat, vulputate odio sodales, finibus lacus. Nam
+                                    malesuada mauris sapien, at vulputate ex condimentum vel. Suspendisse id erat turpis.
+                                    Suspendisse sed lacinia purus. Donec rhoncus massa ut elit commodo, quis tincidunt neque
+                                    cursus. Phasellus ligula odio, aliquam et aliquam quis, condimentum efficitur lorem. Donec
+                                    in diam sed magna efficitur hendrerit. Duis sed nunc ultricies, hendrerit metus mattis,
+                                    malesuada urna. Ut efficitur vestibulum enim, a convallis nisl fermentum ac. Pellentesque
+                                    vulputate eget neque nec aliquet. Pellentesque eleifend eget tellus vel placerat. Phasellus
+                                    at fermentum est, quis congue turpis. <strong>Nam malesuada aliquet ligula. Etiam ut ultrices
+                                        leo.</strong></p>
+                                <br/>
+
+                                <p>Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                                    turpis egestas. Sed risus dolor, pulvinar vitae velit at, iaculis efficitur neque.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
 
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
@@ -37,6 +89,7 @@
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/q/q.js"></script>
         <script src="bower_components/bower-webfontloader/webfont.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -51,6 +104,9 @@
         </script>-->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/font.js"></script>
+        <script src="scripts/handler.js"></script>
+        <script src="scripts/view.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
     </body>
