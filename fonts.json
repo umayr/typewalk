@@ -1,0 +1,50 @@
+[
+    {
+        "font": "copse",
+        "props": {
+            "id": "copse",
+            "fontName": "Copse",
+            "weights": [200, 400],
+            "type": "serif",
+            "background": {
+                "type": "plain",
+                "colors": ["#e74c3c"]
+            },
+            "foreground": {
+                "colors": ["#FFFFFF"]
+            }
+        }
+    },
+    {
+        "font": "pt-sans",
+        "props": {
+            "id": "pt-sans",
+            "fontName": "PT Sans",
+            "weights": [200, 400, 700],
+            "type": "sans-serif",
+            "background": {
+                "type": "plain",
+                "colors": ["#ecf0f1"]
+            },
+            "foreground": {
+                "colors": ["#222222"]
+            }
+        }
+    },
+    {
+        "font": "droid-serif",
+        "props": {
+            "id": "droid-serif",
+            "fontName": "Droid Serif",
+            "weights": [200, 400, 700],
+            "type": "serif",
+            "background": {
+                "type": "plain",
+                "colors": ["#f39c12"]
+            },
+            "foreground": {
+                "colors": ["#FFFFFF"]
+            }
+        }
+    }
+]
