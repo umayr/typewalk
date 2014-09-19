@@ -1,3 +1,4 @@
+![Logo](https://raw.githubusercontent.com/umayr/typewalk/master/app/images/logo.png "TypeWalk")
 TypeWalk
 =========
 
