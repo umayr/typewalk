@@ -88,12 +88,9 @@
 
     function registerHandler() {
 
-        console.log(views);
-
         var handler = new Handler(views, _.size(response));
         jq('html').keyup(function (event) {
             // for next ->
-            console.log(event);
             if (event.keyCode === 39) {
                 handler.next();
             }

@@ -6,10 +6,13 @@
     'use strict';
 
     var Handler = function (views, size) {
+
         this.current = 0;
         this.direction = null;
         this.total = size;
         this.views = views;
+
+        console.log(this);
     };
 
     Handler.prototype.next = function () {
@@ -43,6 +46,6 @@
 
     };
 
-    Window.Handler = Handler;
+    window.Handler = Handler;
 
 })();
