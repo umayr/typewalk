@@ -13,7 +13,7 @@
         this.size = props.size;
         this.background = props.background;
         this.foreground = props.foreground;
-    }
+    };
 
     Font.prototype.getURL = function () {
         return "http://fonts.googleapis.com/css?family=" + this.name.replace(/ /g, '+');
@@ -24,6 +24,11 @@
             "font-weight": this.weights[0],
             "font-size": (typeof this.size !== 'undefined') ? this.size : '5.5em',
             "color": this.foreground.colors[0]
+        }
+    };
+    Font.prototype.getDetailsCSS = function () {
+        return {
+            "font-family": this.name + ', ' + this.type
         }
     };
     Font.prototype.getParentCSS = function () {

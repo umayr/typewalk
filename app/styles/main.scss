@@ -84,15 +84,18 @@ body {
   justify-content: center;
   width: 100%;
   &.show {
-      animation: InAnimation $animation-speed $animation-easing both;
+    animation: InAnimation $animation-speed $animation-easing both;
   }
   &.hide {
-      animation: OutAnimation $animation-speed $animation-easing both;
+    animation: OutAnimation $animation-speed $animation-easing both;
+  }
+  &.strictly-hidden {
+    display: none;
   }
 }
 
 .view-wrap {
-  background: #e74c3c;
+  background: #000;
   opacity: 0;
   overflow: hidden;
   backface-visibility: hidden;
@@ -116,16 +119,71 @@ body {
   &.view {
 
   }
-  .font-view {
-    justify-content: self;
-    font-family: Copse, serif;
+  .font-details {
+    .row {
+      &:first-child {
+        text-align: center;
+      }
+    }
+    opacity: 0.5;
+    transform: scale(1.2) rotateX(90deg);
+    box-sizing: border-box;
+    &.white {
+      background: #FFF;
+      border: 10px solid #000;
+      color: #000;
 
+    }
+    &.black {
+      background: #000;
+      border: 10px solid #FFF;
+      color: #FFF;
+
+    }
     h1 {
-      @include zero-margin-padding();
       font-size: 5.5em;
       font-weight: 200;
-      color: #FFF;
     }
+    blockquote .small {
+      color: inherit !important;
+    }
+    &.flipped {
+      opacity: 1;
+      transform: scale(1) rotateX(0deg);
+    }
+  }
+  .font-view {
+    display: flex;
+
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+
+    h1 {
+      margin: auto;
+      text-align: center;
+    }
+
+    &.flipped {
+      opacity: 0.5;
+      transform: scale(0.8) rotateX(90deg);
+    }
+  }
+
+  .font-view, .font-details {
+    transform-origin: top;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.6s ease-in;
+
+  }
+  &.with-details {
+    height: 100%;
+    overflow-y: auto;
   }
 }
 

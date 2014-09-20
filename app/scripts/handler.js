@@ -12,7 +12,6 @@
         this.total = size;
         this.views = views;
 
-        console.log(this);
     };
 
     Handler.prototype.next = function () {
@@ -30,13 +29,10 @@
             this.switchFont();
         }
     };
-    /*Handler.prototype.view = function () {
-     var view = views[this.current];
-     var font = view.font;
-
-     jq('#app').removeClass('show').addClass('hide');
-     jq('#view').removeClass('hide').addClass('show');
-     };*/
+    Handler.prototype.toggle = function () {
+        var view = this.views[this.current];
+        view.toggle();
+    };
     Handler.prototype.switchFont = function () {
         var showView = this.views[this.current];
         var hideView = (this.direction == 'next') ? this.views[this.current - 1] : this.views[this.current + 1];

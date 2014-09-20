@@ -11,6 +11,7 @@
     var Handler = window.Handler;
     var Font = window.Font;
     var View = window.View;
+    var screen = 'hello';
 
     function getFonts() {
         var deferred = Q.defer();
@@ -57,10 +58,10 @@
             console.error(code);
         });
 
-
+/*
         setInterval(function () {
             showAndHide('#hello', '#app');
-        }, 2000);
+        }, 2000);*/
     })();
 
     function registerRoutes() {
@@ -85,9 +86,7 @@
         });
     }
 
-
     function registerHandler() {
-
         var handler = new Handler(views, _.size(response));
         jq('html').keyup(function (event) {
             // for next ->
@@ -101,7 +100,16 @@
             }
 
             if (event.keyCode === 32) {
-                //handler.view();
+                switch(screen){
+                    case 'hello': {
+                        showAndHide('#hello', '#app');
+                        screen = 'app';
+                        break;
+                    }
+                    case 'app':{
+                        handler.toggle();
+                    }
+                }
             }
         });
 
